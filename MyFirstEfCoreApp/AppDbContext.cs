@@ -2,11 +2,22 @@
 // Licensed under MIT license. See License.txt in the project root for license information.
 
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Console;
 
 namespace MyFirstEfCoreApp
 {
     public class AppDbContext : DbContext
     {
+
+
+
+        public ILoggerFactory loggerFactory = LoggerFactory.Create(builder =>
+        {
+            builder.AddConsole();
+        }
+        );
+
         private const string ConnectionString = //#A
             @"Server=(localdb)\mssqllocaldb;
              Database=MyFirstEfCoreDb;
@@ -18,6 +29,7 @@ namespace MyFirstEfCoreApp
             DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(ConnectionString); //#B
+            optionsBuilder.UseLoggerFactory(loggerFactory);
         }
     }
 
