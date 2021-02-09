@@ -34,7 +34,7 @@ namespace MyFirstEfCoreApp
     }
 
     /********************************************************
-    #A The connection string is used by the SQL Server database provider to find the database
-    #B Using the SQL Server database provider’s UseSqlServer command sets up the options ready for creating the applications’s DBContext
+       Add-Migration InitialMigration
+       Update-Database
      ********************************************************/
 }
