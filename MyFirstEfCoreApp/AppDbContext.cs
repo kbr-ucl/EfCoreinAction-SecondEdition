@@ -19,7 +19,7 @@ namespace MyFirstEfCoreApp
         );
 
         private const string ConnectionString = //#A
-            @"Server=(localdb)\mssqllocaldb;
+            @"Server=localhost;
              Database=MyFirstEfCoreDb;
              Trusted_Connection=True";
 
